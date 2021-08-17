@@ -1,0 +1,37 @@
+/*------------Estilos para formulario de login-------------*/
+h1{
+    margin-top: 30px;
+    text-align: center;
+}
+main{
+    max-width: 550px;
+    padding-top: 20px;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+}
+.login-form input{
+    margin-bottom: 30px;
+    height: 35px;
+    border: 1px solid #ebebeb;
+    border-radius: 18px;
+    background-color: #ffffff;
+    padding-left: 5px;
+}
+.login-form label{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.login-form button{
+    width: 200px;
+    align-self: center;
+    margin-bottom: 160px;
+    height: 35px;
+    border-radius: 35px;
+}
+.login-form button:hover{
+    background-color: #0022AA;
+    border: 1px solid #0022AA;
+    color: #ffffff;
+}

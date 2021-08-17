@@ -1,0 +1,83 @@
+/*------------Estilos para formulario de registro-------------*/
+main{
+    max-width: 700px;
+    padding-top: 20px;
+}
+main h1{
+    text-align: center;
+}
+.register-form{
+    display: flex;
+    flex-direction: column;
+}
+.register-form > input{
+    border-radius: 18px;
+    margin-bottom: 30px;
+    border: 1px solid #ebebeb;
+    background-color: #ffffff;
+    height: 35px;
+    padding-left: 5px;
+}
+.register-form > label{
+    margin-bottom: 10px;
+}
+.user-type{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+main h2, main h3{
+    text-align: left;
+    width: 100%;
+}
+.user-type .user{
+    width: 40%;
+    text-align: center;
+}
+.favs{
+    margin-bottom: 10px;
+}
+.favs label{
+    margin-left: 5px;
+}
+.register-form .files{
+    border: none;
+    border-radius: 0;
+    height: auto;
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+.buttons button{
+    width: 150px;
+    /* border: 1px solid #ebebeb; */
+    height: 35px;
+    border-radius: 35px;
+}
+.buttons button:first-child:hover{
+    border: 1px solid #1259c3;
+    background-color: #1259c3;
+    color: #ffffff;
+}
+.buttons button:last-child:hover{
+    background-color: #b80c0c;
+    border: 1px solid #b80c0c;
+    color: #ffffff;
+}
+
+@media (min-width: 520px){
+    .fav-categories{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .fav-categories h2{
+        width: 100%;
+    }
+}
+
+@media(min-width: 1000px){
+ 
+}
