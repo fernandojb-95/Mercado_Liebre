@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+    <title>Regístrate</title>
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+        <h1>Regístrate</h1>
+        <form action="/user" class="register-form" method="POST" enctype="multipart/form-data">
+            <div class="form-field">
+                <label for="name">Nombre y apellido</label>
+                <input type="text" placeholder="Ingresa tu nombre" id="name" name="name" value="<%= locals.old ? old.name : ''%>">
+                <!-- Busca errores con la etiqueta name y los muestra -->
+                <% if(locals.errors && errors.some(error => error.param == 'name')) { %>
+                    <p class="error"><%=errors.find(error => error.param == 'name').msg%></p>
+                <% } %>
+            </div>
+            <div class="form-field">
+                <label for="user-name">Nombre de usuario</label>
+                <input type="text" placeholder="Ingresa tu username" id="user-name" name="username" value="<%= locals.old ? old.username : ''%>">
+                <!-- Busca errores con la etiqueta username y los muestra -->
+                <% if(locals.errors && errors.some(error => error.param == 'username')) { %>
+                    <p class="error"><%=errors.find(error => error.param == 'username').msg%></p>
+                <% } %>
+            </div>
+            <div class="form-field">
+                <label for="date">Fecha de nacimiento</label>
+                <input type="date" placeholder="dd/mm/aaaa" id="date" name="birthday" value="<%= locals.old ? old.birthday : ''%>">
+                <!-- Busca errores con la etiqueta birthday y los muestra -->
+                <% if(locals.errors && errors.some(error => error.param == 'birthday')) { %>
+                    <p class="error"><%=errors.find(error => error.param == 'birthday').msg%></p>
+                <% } %>
+            </div>
+            <div class="form-field">
+                <label for="address">Domicilio completo</label>
+                <input type="text" placeholder="Dirección" id="address" name="address" value="<%= locals.old ? old.address : ''%>">
+                <!-- Busca errores con la etiqueta address y los muestra -->
+                <% if(locals.errors && errors.some(error => error.param == 'address')) { %>
+                    <p class="error"><%=errors.find(error => error.param == 'address').msg%></p>
+                <% } %>
+            </div>
+            <div class="form-field">
+                <div class="user-type">
+                    <h2>Tipo de perfil:</h2>
+                    <div class="user">
+                        <input type="radio" value="vendedor" id="sell" name="type" <%= locals.old ? old.type=='vendedor' ? 'checked' : '' : '' %>>
+                        <label for="sell">Vendedor</label>
+                    </div>
+                    <div class="user">
+                        <input type="radio" value="comprador" id="buy" name="type" <%= locals.old ? old.type=='comprador' ? 'checked' : '' : '' %>>
+                        <label for="buy">Comprador</label>
+                    </div>
+                </div>
+                <!-- Busca errores con la etiqueta type y los muestra -->
+                <% if(locals.errors && errors.some(error => error.param == 'type')) { %>
+                    <p class="error"><%=errors.find(error => error.param == 'type').msg%></p>
+                <% } %>
+            </div>
+            <div class="form-field">
+                <div class="fav-categories">
+                    <h2>Categorias de interés:</h2>
+                    <div class="favs">
+                        <input type="checkbox" value="electro" name="categoria" id="electro"  <%= locals.old && old.categoria ? old.categoria.includes('electro') ? 'checked' : '' : '' %>> 
+                        <label for="electro">Electro</label>
+                    </div>
+                    <div class="favs">
+                        <input type="checkbox" value="moda" name="categoria" id="moda" <%= locals.old && old.categoria ? old.categoria.includes('moda') ? 'checked' : '' : '' %>>
+                        <label for="moda">Moda</label>
+                    </div>
+                    <div class="favs">
+                        <input type="checkbox" value="hogar" name="categoria" id="hogar" <%= locals.old && old.categoria ? old.categoria.includes('hogar') ? 'checked' : '' : '' %>>
+                        <label for="hogar">Hogar</label>
+                    </div>
+                    <div class="favs">
+                        <input type="checkbox" value="jugueteria" name="categoria" id="jugueteria" <%= locals.old && old.categoria ? old.categoria.includes('jugueteria') ? 'checked' : '' : '' %>>
+                        <label for="jugueteria">Juguetería</label>
+                    </div>
+                    <div class="favs">
+                        <input type="checkbox" value="vida-sana" name="categoria" id="vida" <%= locals.old && old.categoria ? old.categoria.includes('vida-sana') ? 'checked' : '' : '' %>>
+                        <label for="vida">Vida sana</label>
+                    </div>
+                </div>
+                <!-- Busca errores con la etiqueta categoria y los muestra -->
+                <% if(locals.errors && errors.some(error => error.param == 'categoria')) { %>
+                    <p class="error"><%=errors.find(error => error.param == 'categoria').msg%></p>
+                <% } %>
+            </div>
+            <div class="form-field">
+                <label for="file">
+                    <h3>Foto de perfil</h3></label>
+                <input type="file" id="file" class="files" name="profilePic">
+            </div>
+            <div class="form-field">
+                <label for="password">Contraseña</label>
+                <input type="password" placeholder="Contraseña" id="password" name="password">
+                <!-- Busca errores con la etiqueta password y los muestra -->
+                <% if(locals.errors && errors.some(error => error.param == 'password')) { %>
+                    <p class="error"><%=errors.find(error => error.param == 'password').msg%></p>
+                <% } %>
+            </div>
+            <div class="form-field">
+                <label for="pass-confirm">Confirmar Contraseña</label>
+                <input type="password" placeholder="Confirmar Contraseña" id="pass-confirm" name="passConfirm">
+                <p class="info">La contraseña debe contener al menos una mayúscula, una minúscula y un número. Y debe contener mínimo 8 caracteres</p>
+                <!-- Busca errores con la etiqueta passConfirm y los muestra -->
+                <% if(locals.errors && errors.some(error => error.param == 'passConfirm')) { %>
+                    <p class="error"><%=errors.find(error => error.param == 'passConfirm').msg%></p>
+                <% } %>
+            </div>
+
+            <div class="buttons">
+                <button type="submit">Registrar usuario</button>
+                <button type="reset">Restablecer</button> 
+            </div>
+        </form>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

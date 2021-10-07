@@ -1,0 +1,30 @@
+[
+ {
+  "id": 1,
+  "name": "Fernando Juarez",
+  "username": "ferjuarez",
+  "birthday": "1998-10-20",
+  "address": "Mi direccion",
+  "type": "comprador",
+  "categoria": [
+   "hogar",
+   "jugueteria"
+  ],
+  "profilePic": "default-usersPath.png",
+  "password": "$2a$10$wULckzLj3RO0OgnZYQhAaeiyjA.bjPG3lTD.SpoahgK/Jef940JCe"
+ },
+ {
+  "id": 2,
+  "name": "Luis Morales",
+  "username": "luismorales",
+  "birthday": "1994-10-15",
+  "address": "Domicilio",
+  "type": "comprador",
+  "categoria": [
+   "hogar",
+   "jugueteria"
+  ],
+  "profilePic": "img-luis-morales-93365.jpg",
+  "password": "$2a$10$3pfEqb7/SEUx/pVC3EePduE4fmx0yqpzpDQSfl8xcnHnVZHu2jv0C"
+ }
+]

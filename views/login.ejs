@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+        <h1>Inicia sesión</h1>
+        <form action="" class="login-form">
+            <label for="login-email">Correo electrónico</label>
+            <input type="email" id="login-email" placeholder="nombre@mail.com" required>
+
+            <label for="login-pass">Contraseña</label>
+            <input type="password" id="login-pass" placeholder="Contraseña" required>
+
+            <button type="submit">Ingresa</button>
+        </form>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

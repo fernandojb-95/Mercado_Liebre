@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('./partials/head.ejs') %>
+    <title>Detalle de producto <%= detail.name %></title>
+    <link rel="stylesheet" href="/css/detail.css">
+</head>
+<body>
+    <%- include ('./partials/header.ejs') %>
+    <main>
+        <section class="product-detail">
+            <h1><%= detail.name %></h1>
+            <div class="product-view">
+                <div class="product-img">
+                    <img src="/img/products/<%= detail.image%>" alt="Imagen <%=detail.name%>">
+                </div>
+                <div class="product-info">
+                    <p class="item-precio">Precio normal $<%= detail.price %></p>
+                    <p class="item-descuento"><%= detail.discount %>% OFF</p>
+                    <p class="item-precio-final">Precio final $<%= detail.price * (1 - detail.discount/100) %></p>
+                    <div class="product-buttons">
+                        <a href="/product/edit/<%=detail.id %>"><button>Editar</button></a>
+                        <form action="/product/delete/<%=detail.id%>?_method=DELETE" method="POST">
+                            <button type="submit">Eliminar</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <h2>Descripción del producto</h2>
+                    <p><%= detail.description %></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <%- include ('./partials/footer.ejs') %>
+</body>
+</html>
